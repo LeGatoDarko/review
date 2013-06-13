@@ -1,0 +1,211 @@
+<div class="container editShedule">
+    
+    <div class="row-fluid">
+        
+
+        <div class="span16">
+            <h2>Создание активности</h2>
+        
+            <nav class="row-fluid">
+                <a href="#">Описание</a>
+                <a href="#">Условия бронирования</a>
+                <a href="#" class="active">Расписание</a>
+            </nav>
+        </div>
+    </div>
+        
+    <div class="row-fluid">
+
+        <div class="wrapper">
+            
+            <input id="monthsArr" name="monthsArr" type="hidden" value="января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря" />
+            <input id="daysNamesArr" name="daysNamesArr" type="hidden" value="дней,дня,день" />
+
+            <input id="hoursArr" name="hoursArr" type="hidden" value="час,часа,часов" />
+
+            <input id="minutesArr" name="minutesArr" type="hidden" value="минут" />
+
+            <input id="inputsError" name="inputsError" type="hidden" value="Проверьте выбранные значения" />
+
+<form action="/activity/edit/1/booking" class="form-horizontal" method="post">                <p class="header">Расписание</p>
+                <div class="row-fluid">
+                    <div class="span10">
+                        <div class="control-group">
+                            <label class="control-label required" for="FromDate">Дата и время начала</label>
+
+                            <div class="controls">
+                                <div class="row-fluid">
+                                    <input class="fromDate" id="FromDate" name="FromDate" type="text" value="" />
+
+                                    <select class="startTime">
+                                        <option value="1">12:00</option>
+                                        <option value="2">12:30</option>
+                                        <option value="3">13:00</option>
+                                        <option value="4">13:30</option>
+                                        <option value="5">14:00</option>
+                                        <option value="6">14:30</option>
+                                        <option value="7">15:00</option>
+                                        <option value="8">15:30</option>
+                                        <option value="9">16:00</option>
+                                        <option value="10">16:30</option>
+                                        <option value="11">17:00</option>
+                                        <option value="12">17:30</option>
+                                        <option value="13">18:00</option>
+                                        <option value="14">18:30</option>
+                                        <option value="15">19:00</option>
+                                    </select>
+                                </div>
+
+                                <div class="row-fluid alertFromBlock">
+                                    <div class="alert alert-info forEndTime">
+                                        Укажите дату и время начала проведения активности
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label required" for="ToDate">Дата и время окончания </label>
+
+                            <div class="controls">
+                                <div class="row-fluid">
+                                    <input class="toDate" id="ToDate" name="ToDate" type="text" value="" />
+
+                                    <select class="endTime">
+                                        <option value="1">12:00</option>
+                                        <option value="2">12:30</option>
+                                        <option value="3">13:00</option>
+                                        <option value="4">13:30</option>
+                                        <option value="5">14:00</option>
+                                        <option value="6">14:30</option>
+                                        <option value="7">15:00</option>
+                                        <option value="8">15:30</option>
+                                        <option value="9">16:00</option>
+                                        <option value="10">16:30</option>
+                                        <option value="11">17:00</option>
+                                        <option value="12">17:30</option>
+                                        <option value="13">18:00</option>
+                                        <option value="14">18:30</option>
+                                        <option value="15">19:00</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="row-fluid alertToBlock">
+                                    <div class="alert alert-info forEndTime">
+                                        Укажите время окончания в последний день проведения активности
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="span5">
+                        <div id="duration" class="alert alert-info">
+                            <p>Продолжительность</p>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="button" class="btn btn-large addToShedule" id="addToShedule">Добавить в расписание</button>
+                <div class="row-fluid">
+                    <table class="table schedule table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Начало</th>
+                                <th>Окончание</th>
+                                <th>Продолжительность</th>
+                                <th>Удалить строку</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+
+
+                </div>
+                <p class="row-fluid aboveFooter bortop1">
+                    Вам необходимо будет дождаться подтверждение вашего аккаунта и проверки активности от модератора 
+                    перед публикацией. После проверки публикация произойдет автоматически.
+                </p>
+                <div class="footer">
+                    <button type="submit" class="btn btn-large" disabled id="addActivity">Опубликовать</button>
+                    <a href="/" class="btn btn-large btn-link">Отменить</a>
+                </div>
+</form>        </div>
+    </div>
+    
+</div>
+<footer class="row-fluid">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span3 offset0-5">
+                <ul class="row-fluid researchBlock">
+                    <li class="lead">Исследуйте</li>
+                    <li><a href="#">Как это работает</a></li>
+                    <li><a href="#">Путеводитель по активностям</a></li>
+                </ul>
+
+<form action="/Home/Settings" class="row-fluid geoset" method="post"><input name="__RequestVerificationToken" type="hidden" value="bXOx4GPykbd5W6WYs8V2klvf0HcnbA89BWG98J0dhiD3frUcRv8JmIGnhe_3md4wCLuFI1VYTKgfWBx8iHLI7_R6-6fUIKViDLzfrkwMDUQ1" />                    <label for="lang">Выбор языка:</label>
+<select id="CultureId" name="CultureId"><option selected="selected" value="ru-RU">Русский</option>
+<option value="de-DE">German</option>
+<option value="en-GB">English</option>
+</select>                    <label for="currency">Выбор валюты:</label>
+<select class="currency" data-val="true" data-val-required="The Currency field is required." id="Currency" name="Currency"><option selected="selected" value="0">Rub</option>
+<option value="1">Dollar</option>
+<option value="2">Euro</option>
+</select></form>            </div>
+            <ul class="span3 offset1 companyBlock">
+                <li class="lead">Компания</li>
+                <li><a href="#">Партнерам</a></li>
+                <li><a href="#">О Проекте</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Пользовательское соглашение</a></li>
+                <li><a href="#">Политика конфеденциальности</a></li>
+            </ul>
+            <ul class="span3 offset1 callbackBlock">
+                <li class="lead">Свяжитесь с нами</li>
+                <li><i class="sprite-footerSprites footerSprites-phone"></i>+7 812 336-3777</li>
+                <li><i class="sprite-footerSprites footerSprites-mail"></i><a href="mailto:test@test.ru">Напишите нам</a></li>
+            </ul>
+            <ul class="span3 offset1 socialBlock">
+                <li class="lead">Мы в социальных сетях</li>
+                <li><i class="sprite-footerSprites footerSprites-f_ico"></i><a href="#">Facebook</a></li>
+                <li><i class="sprite-footerSprites footerSprites-twitter_ico"></i><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+
+        <div class="row-fluid endLine">
+            <p class="copyright pull-left">&copy; 2013 Made My Trip</p>
+            <a href="http://igsystems.ru/" target="_blank" class="developer pull-right">
+                <img src="/Content/images/igs.png" alt="Ingenius Systems" width="50" height="39"/> UX and development
+            </a>
+        </div>
+    </div>
+</footer><!--
+<script src="http://mademytrip.igsystems.ru/Scripts/jquery-1.9.1.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/ui/jquery.ui.core.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/ui/jquery.ui.widget.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/ui/jquery.ui.position.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/ui/jquery.ui.selectmenu.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/checkboxStyle.js"></script>
+<script src="/Scripts/Meerkat/Image/Upload/qq/jquery.fineuploader-3.4.1.js"></script>
+<script src="/Scripts/Meerkat/Image/Upload/Meerkat.Image.Uploader.js"></script>
+<script src="/Scripts/jquery.textchange.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/global.js"></script>
+
+    <script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script src="http://mademytrip.igsystems.ru/Scripts/bootstrap.min.js"></script>
+
+    
+    
+    <script src="http://mademytrip.igsystems.ru/Scripts/ui/jquery.ui.datepicker.js"></script>
+<script src="http://mademytrip.igsystems.ru/Scripts/project/activity/edit/editShedule.js"></script>-->
